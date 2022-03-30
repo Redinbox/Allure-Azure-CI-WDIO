@@ -59,6 +59,7 @@
     "eject": "react-scripts eject",
     "test:wdio": "wdio ./src/config/wdio.config.js",
     "ci:wdio": "start-server-and-test start http://localhost:3000 test:wdio",
+    "allureopen": "allure generate ./report/allure-results/  -o ./report/allure-report/ --clean && allure open ./report/allure-report",
     "e2e:ci": "concurrently -k -s first \"npm:e2e:ci:*\"",
     "e2e:ci:server": "cross-env SERVER_PORT=40001 ./launchServer.sh",
     "pree2e:ci:app": "wait-on -t30000 http-get://localhost:40001/state",
