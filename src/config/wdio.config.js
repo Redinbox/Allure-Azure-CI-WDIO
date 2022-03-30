@@ -60,7 +60,7 @@ exports.config = {
 
     framework: 'mocha',
 
-    reporters: [
+    /**reporters: [
         'spec',
         ['junit', {
             outputDir: './output/',
@@ -68,8 +68,8 @@ exports.config = {
                 return `wr-results.xml`;
             }
         }]
-        ],
-    /**reporters: [
+        ],*/
+    reporters: [
         'spec',
         [
             'allure',
@@ -81,7 +81,7 @@ exports.config = {
                 addConsoleLogs: true,
             },
         ],
-    ],*/
+    ],
 
     //
     // Options to be passed to Mocha.
