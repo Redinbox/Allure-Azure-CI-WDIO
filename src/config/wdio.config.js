@@ -68,11 +68,7 @@ exports.config = {
                 return `wr-results.xml`;
             }
         }]
-        ],*/
-    reporters: [
-        'spec',
-        [
-            'allure',
+        ['allure',
             {
                 outputDir: 'report/allure-results',
                 disableWebdriverStepsReporting: true,
