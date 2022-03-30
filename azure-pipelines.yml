@@ -25,8 +25,8 @@ steps:
 - task: PublishTestResults@2
   displayName: 'Publish Test Results'
   inputs:
-    testResultsFiles: 'wr-results.xml'
-    searchFolder: '$(System.DefaultWorkingDirectory)/_Redinbox_Allure-Azure-CI-WDIO/output'
+    testResultsFiles: '**/output/wr-results.xml'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
     testRunTitle: 'Running WDIO tests'
   condition: succeededOrFailed()
 
