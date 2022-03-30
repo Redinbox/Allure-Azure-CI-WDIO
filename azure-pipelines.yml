@@ -22,14 +22,12 @@ steps:
     npm run ci:wdio
   displayName: 'npm install , build , start app and run wdio tests'
   continueOnError: true
-- script: |
-      echo $(System.DefaultWorkingDirectory)/output
 - task: PublishTestResults@2
   displayName: 'Publish Results'
   inputs:
     testResultsFormat: "JUnit"
     testResultsFiles: "wr-results.xml"
-    searchFolder: '$(System.DefaultWorkingDirectory)/_Redinbox_WebdriverIO-CI-AZURE-REACT/output'
+    searchFolder: '$(System.DefaultWorkingDirectory)/_Redinbox_Allure-Azure-CI-WDIO/output'
     mergeTestResults: true
     testRunTitle: 'Test Results'
     publishRunAttachments: true
