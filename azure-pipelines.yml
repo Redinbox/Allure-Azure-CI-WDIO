@@ -33,5 +33,5 @@ steps:
 
 - task: AllureGenerate@1
   inputs:
-    resultsDir: '$(System.DefaultWorkingDirectory)/_Redinbox_Allure-Azure-CI-WDIO/report/allure-report'
+    resultsDir: '$(System.DefaultWorkingDirectory)/_Redinbox_Allure-Azure-CI-WDIO/report/allure-results'
     targetDir: '$(System.DefaultWorkingDirectory)/_Redinbox_Allure-Azure-CI-WDIO/report'
