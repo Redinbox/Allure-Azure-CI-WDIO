@@ -23,15 +23,13 @@ steps:
   displayName: 'npm install , build , start app and run wdio tests'
   continueOnError: true
 - task: PublishTestResults@2
-  displayName: 'Publish Results'
+  displayName: 'Publish Test Results'
   inputs:
-    testResultsFormat: "JUnit"
-    testResultsFiles: "wr-results.xml"
+    testResultsFiles: 'wr-results.xml'
     searchFolder: '$(System.DefaultWorkingDirectory)/_Redinbox_Allure-Azure-CI-WDIO/output'
-    mergeTestResults: true
-    testRunTitle: 'Test Results'
-    publishRunAttachments: true
-  continueOnError: true
+    testRunTitle: 'Running WDIO tests'
+  condition: succeededOrFailed()
+
 - task: AllureGenerate@1
   inputs:
     resultsDir: 'allure-results'
