@@ -60,7 +60,7 @@ exports.config = {
 
     framework: 'mocha',
 
-    /**reporters: [
+    reporters: [
         'spec',
         ['junit', {
             outputDir: './output/',
@@ -75,8 +75,8 @@ exports.config = {
                 disableWebdriverScreenshotsReporting: true,
                 disableMochaHooks: true,
                 addConsoleLogs: true,
-            },
-        ],
+            }
+        ]
     ],
 
     //
@@ -148,7 +148,7 @@ exports.config = {
         var filename = 'TESTFAIL_' + browserName + '_' + timestamp + '.png';
         var filePath = path.join(this.screenshotPath, filename);
         // save screenshot
-        await browser.saveScreenshot();
+        await browser.saveScreenshot(filePath);
         console.log('\tSaved screenshot: ', filePath);
 
         if (error) {
