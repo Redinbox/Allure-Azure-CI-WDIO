@@ -30,3 +30,4 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/wr-results.xml'
+    testRunTitle: 'junit'
