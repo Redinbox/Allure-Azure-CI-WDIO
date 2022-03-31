@@ -35,3 +35,9 @@ steps:
   inputs:
     resultsDir: '$(System.DefaultWorkingDirectory)/_Redinbox_Allure-Azure-CI-WDIO/report/allure-results'
     targetDir: '$(System.DefaultWorkingDirectory)/**/report'
+- task: CopyPublishBuildArtifacts@1
+  inputs:
+    CopyRoot: '''$(System.DefaultWorkingDirectory)/**/report'
+    Contents: 'allure report'
+    ArtifactName: 'allure report'
+    ArtifactType: 'FilePath'
