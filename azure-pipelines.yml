@@ -26,7 +26,7 @@ steps:
 - task: PublishTestResults@2
   displayName: 'Publish Test Results'
   inputs:
-    testResultsFiles: 'wr-results.xml'
+    testResultsFiles: '**/wr-results.xml'
     searchFolder: '$(System.DefaultWorkingDirectory)/**/output'
     testRunTitle: 'Running WDIO tests'
   condition: succeededOrFailed()
