@@ -14,16 +14,16 @@ steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '16.x'
+- task: AllureGenerate@1
+  inputs:
+    resultsDir: 'allure-results'
+    targetDir: 'allure-report/$(Build.BuildNumber)'
   displayName: 'Install Node.js'
 - script: |
     npm install
     npm run build
     npm run ci:wdio
   displayName: 'npm install and build'
-- task: AllureGenerate@1
-  inputs:
-    resultsDir: 'allure-results'
-    targetDir: 'allure-report/$(Build.BuildNumber)'
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
